@@ -48,7 +48,7 @@ module.exports = (api, options, rootOptions) => {
         'mini-types': '*',
 		"less": "^4.1.1",
 		"less-loader": "^5.0.0",
-		"sass": "1.38.2",
+		"sass": "^1.32.8",
 		"sass-loader": "^10.1.1",
       }
     }
