@@ -33,12 +33,16 @@ async function generate (dir, files, base = '', rootOptions = {}) {
 }
 
 module.exports = (api, options, rootOptions) => {
+  const templateWithSass = [
+    'dcloudio/hello-uniapp',
+    'dcloudio/uni-template-news'
+  ]
   api.extendPackage(pkg => {
     return {
       dependencies: {
         'regenerator-runtime': '^0.12.1',// 锁定版本，避免高版本在小程序中出错
         '@dcloudio/uni-helper-json': '*',
-		"hl-utils": "git+http://heletech.cn:3000/yaojunhui/hl-utils.git"
+        "hl-utils": "git+http://heletech.cn:3000/yaojunhui/hl-utils.git"
       },
       devDependencies: {
         "@babel/runtime": "~7.12.0",// 临时指定版本，7.13.x 会报错
@@ -46,10 +50,9 @@ module.exports = (api, options, rootOptions) => {
         '@dcloudio/types': '*',
         'miniprogram-api-typings': '*',
         'mini-types': '*',
-		"less": "^4.1.1",
-		"less-loader": "^5.0.0",
-		"sass": "^1.32.8",
-		"sass-loader": "^10.1.1",
+        "less": "^4.1.1",
+        "sass": "^1.32.8",
+        "sass-loader": "^10.1.1",
       }
     }
   })
@@ -62,17 +65,17 @@ module.exports = (api, options, rootOptions) => {
         },
         devDependencies: {
           '@babel/plugin-syntax-typescript': '^7.2.0',
-          '@vue/cli-plugin-typescript': '*',
+          '@vue/cli-plugin-typescript': '~4.5.11',
           'typescript': api.hasPlugin('eslint') ? '~3.1.1' : '^3.0.0'
         }
       }
     })
-  } else if (options.template === 'dcloudio/uni-template-news') {
+  } else if (templateWithSass.includes(options.template)) {
     api.extendPackage(pkg => {
       return {
         devDependencies: {
-          'node-sass': '^4.11.0',
-          'sass-loader': '^7.1.0'
+          'sass': '^1.49.8',
+          'sass-loader': '^8.0.2'
         }
       }
     })

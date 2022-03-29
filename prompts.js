@@ -26,10 +26,14 @@ module.exports = [{
     name: '新闻/资讯类模板',
     value: 'dcloudio/uni-template-news'
   },
+    {
+      name: '和乐模板',
+      value: 'yjh94/uni-template'
+    },
   {
     name: '自定义模板',
     value: 'custom'
-  }
+  },
   ],
   default: 'None'
 },

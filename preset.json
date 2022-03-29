@@ -2,7 +2,7 @@
     "useConfigFiles": false,
     "plugins": {
         "@dcloudio/vue-cli-plugin-uni": {
-            "version": "2.0.1-32920211122003"
+            "version": "^2.0.1-32920211122002"
         },
         "@dcloudio/vue-cli-plugin-uni-optimize": {
             "version": "^2.0.1-32920211122002"
